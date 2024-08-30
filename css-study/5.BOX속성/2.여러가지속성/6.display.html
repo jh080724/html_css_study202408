@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      span {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        display: block;
+      }
+
+      a {
+        display: inline-block;
+
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+
+      button {
+        background-color: pink;
+      }
+
+      .box {
+        height: 100px;
+        background-color: yellow;
+
+        margin-top: 40;
+      }
+
+      .hide{
+       /*
+        display: none;
+        */
+        opacity: 0; /* opacity는 투명도 설정임 */
+      }
+    </style>
+  </head>
+  <body>
+    <span>display 속성 공부 !</span>
+    <a href="#">게시판</a>
+    <a href="#">방명록</a>
+
+    <div class="box"><input type="text" value="1" /></div>
+
+    <button id="btn">클릭!</button>
+
+    <script>
+      const $box = document.querySelector(".box");
+      const $btn = document.getElementById("btn");
+
+      $btn.onclick = () => {
+        $box.classList.toggle("hide");
+      };
+    </script>
+  </body>
+</html>

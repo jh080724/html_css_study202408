@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+/* 명시도 점수가 높은 것이 우선 적용 된다. */
+
+/* 1+1+10=12점 */
+body > div.c-g {
+  color: yellowgreen;
+}
+  
+/* 전체선택자:명시도 0점:  */
+* {
+  color: red;
+}
+
+/* 태그선택자:  명시도 1점:  */
+div {
+  /* !important: 명시도 무한대 점*/
+  color: blue !important; 
+}
+
+/* 클래스선택자: 10점 */
+.c-g{
+  color: green;
+}
+
+/* 아이디 선택자: 100 점 */
+#c-y {
+  color: yellow;
+}
+
+/* 31점 */
+body .aaa .bbb h1 {
+  color: dodgerblue;
+
+}
+
+/* 22점 */
+body .aaa .bbb h1:nth-child(1){
+  color: lightgray;
+}
+/* 1 + 100 + 1 + 0점 */
+/*
+ul#fruits > li:not(.orange){
+
+}
+*/
+  </style>
+</head>
+<body>
+  
+
+<!-- div{안녕하세요.$}*5 -->
+<div id="c-y" class="c-g">안녕하세요.1</div>  <!--아이디는 해당 페이지에서 unique 해야함.-->
+<div>안녕하세요.2</div>
+<div class="c-g">안녕하세요.3</div>
+<div id="c-y" style="color:brown">안녕하세요.4</div> <!-- 인라인(style) 명시도: 1000점 -->
+<div>안녕하세요.5</div>
+
+<hr>
+
+<div class="aaa">
+  <div class="bbb">
+    <h1>안녕하세요. 6</h1>
+  </div>
+</div>
+
+</body>
+</html>

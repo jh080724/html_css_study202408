@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 여러 자식들 중 n번째 자식에게 스타일 적용 
+  even: 짝수번째, odd: 홀수번째, n번째
+*/
+      .fruits > li:nth-child(3) {
+        color: orange;
+      }
+
+      .fruits > li:nth-child(even) {
+        color: blue;
+      }
+
+      .fruits > li:nth-child(odd) {
+        color: red;
+      }
+
+      /* n키워드 사용시 0부터 적용 */
+      .fruits > li:nth-child(3n + 1) {
+        color: yellow;
+      }
+
+      /* .food의 첫번째 자식이 p가 아니기 때문에
+        지목해서 스타일을 지정할 수 없다.  */
+      .food > p:nth-child(1) {
+        font-style: italic;
+      }
+
+      /* 같은 종류의 요소 중 n번째 요소를 지목 */
+      .food > p:nth-of-type(1) {
+        font-style: italic;
+      }
+
+      .box-group > div > div:nth-child(1) {
+        color: red;
+        font-weight: bold;
+      }
+
+      /* 특정 클래스 빼고 나머지 not */
+      .fruits li:not(.mango){
+        list-style: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- ul.fruits>li*4 -->
+    <ul class="fruits">
+      <li>딸기</li>
+      <li>사과</li>
+      <li>오렌지</li>
+      <li class="mango">망고</li>
+      <li>바나나</li>
+      <li>복숭아</li>
+      <li>파인애플</li>
+    </ul>
+    <!-- .food>div+p*2>span .food>div+p*2>span -->
+    <div class="food">
+      <div>짜장면</div>
+      <p>볶음밥</p>
+      <p>닭강정</p>
+      <span>짭뽕</span>
+    </div>
+
+    <hr>
+
+
+
+    <!-- .box-group>div*3{$} $는 숫자 1부터증가 -->
+    <div class="box-group">
+      <div>1</div>
+      <div>2</div>
+      <div>3
+        <div>3-1</div>
+        <div>3-2</div>
+        <div>3-3</div>
+      </div>
+    </div>
+
+  </body>
+</html>

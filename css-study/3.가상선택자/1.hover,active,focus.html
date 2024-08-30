@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 가상선택자는 콜론(:)을 사용한다.
+        hover: 마우스 오버
+      */
+      a:hover {
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+
+      .box:hover {
+        width: 200px;
+        transition: 0.5s;
+      }
+
+      .box:active {
+        width: 200px;
+        background-color: blue;
+      }
+
+      input {
+        width: 100px;
+        border: 1px solid gray;
+        outline: none;
+        transition: 0.6s;
+      }
+
+      input:focus {
+        width: 200px;
+
+        transition: 0.6s;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://google.com">구글로 이동~~~</a>
+    <div class="box"></div>
+    <br />
+    <input type="text" />
+  </body>
+</html>

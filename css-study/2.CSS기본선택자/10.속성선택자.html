@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 속성 선택자
+        태그의 속성을 지정하여 선택하는 선택자
+      */
+      input[value="hello"] {
+        width: 200px;
+        color: blue;
+      }
+
+      input[type="password"] {
+        color: red;
+      }
+
+      input[disabled] {
+        opacity: 0.2;
+      }
+
+      /* 클래스가 btn으로 시작되는 선택자 선택: 클래스^ */
+      button[class^="btn"] {
+        font-weight: bold;
+        border-radius: 20px;
+      }
+  /* 클래스가 success로 끝나는 선택자 선택: 클래스$ */
+      button[class$="success"]{
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" value="hello" />
+    <input type="password" value="1234" />
+    <input type="text" value="disabled-text" disabled />
+    <button class="btn-success">Success</button>
+    <button class="btn-danger">Danger</button>
+    <button>지목되면 안되는 버튼</button>
+  </body>
+</html>
